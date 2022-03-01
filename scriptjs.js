@@ -58,6 +58,9 @@ addBtnEl.addEventListener('click', e => {
 deleteBtnEl.addEventListener('click', e => {
   closeModal(modalEl, overlayEl);
 });
+overlayEl.addEventListener('click', e => {
+  closeModal(modalEl, overlayEl);
+});
 
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape' && !modalEl.classList.contains('hidden')) {
