@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="style.css" />
+    <script defer type="module" src="scriptjs.js"></script>
+    <title>Website collector</title>
+  </head>
+  <body>
+    <header class="website-header">
+      <h1 class="title">QualityPre Websites</h1>
+
+      <nav class="nav">
+        <button class="btn btn--add">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon--add"
+            viewBox="0 0 512 512"
+          >
+            <title>Add Circle</title>
+            <path
+              d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm80 224h-64v64a16 16 0 01-32 0v-64h-64a16 16 0 010-32h64v-64a16 16 0 0132 0v64h64a16 16 0 010 32z"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <section class="website-list">
+      <div class="website-container"></div>
+    </section>
+
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1>Add your website</h1>
+      <form class="website-form" action="#">
+        <div>
+          <label for="form-website-name">Website Name</label>
+          <input
+            id="form-website-name"
+            type="text"
+            placeholder="e.g. abc"
+            required
+          />
+        </div>
+        <div>
+          <label for="form-website-address">Website address</label>
+          <input
+            id="form-website-address"
+            type="url"
+            placeholder="www.abc.com"
+            required
+          />
+        </div>
+        <div>
+          <label for="form-website-description">Website description</label>
+          <input
+            id="form-website-description"
+            type="text"
+            placeholder="e.g. A site about the first 3 letters of the alphabet"
+          />
+        </div>
+        <label for="submit"></label>
+        <input id="submit" type="submit" value="Submit" />
+      </form>
+    </div>
+    <div class="overlay hidden"></div>
+  </body>
+</html>
