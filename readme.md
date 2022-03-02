@@ -9,6 +9,12 @@
 
 ### to do
 
-- make responsive for smaller devices
+- make responsive for smaller devices (Done)
 - close modal when overlay clicked (Done)
+
+- add Logo
+
+#### Maybe features
+
+- edit
 - use clipboard API functionality

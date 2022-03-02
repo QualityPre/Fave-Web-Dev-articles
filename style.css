@@ -75,7 +75,6 @@ body {
   line-height: 1;
   font-weight: 400;
   overflow-x: hidden;
-  max-width: 1400px;
   height: 100vh;
   margin: 0 auto;
   position: relative;
@@ -229,9 +228,9 @@ h1 {
 ///////////////////////////////////////////////////*/
 
 .website-list {
-  margin-top: 1.6rem;
-  padding: 2.4rem;
-  width: 100%;
+  margin: 0 auto;
+  padding: 2.4em;
+  max-width: 1200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -239,32 +238,35 @@ h1 {
 
 .website-container {
   display: grid;
-  grid-template-columns: repeat(4, minmax(1rem, 1fr));
+  grid-template-columns: repeat(4, 1fr);
 
-  row-gap: 1.8rem;
-  column-gap: 1.2rem;
+  row-gap: 2.5em;
+  column-gap: 2.5em;
 }
 
 .website {
   display: grid;
   grid-template-columns: 7fr 1fr;
-  grid-template-rows: 2fr 5fr;
-
+  grid-template-rows: 4fr 5fr;
   border: 0.2rem outset white;
-  border-radius: 0.4rem;
+  border-radius: 5%;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0.2rem 0.1rem 0.2rem rgb(28, 26, 49, 0.7);
-  padding: 0.8rem;
+  padding: 0.5em;
+  transition: 0.3s ease-in;
+  font-size: 1.8rem;
+}
+
+.website:hover {
+  transform: translateY(-0.2em);
 }
 
 .website-name a {
   display: inline-block;
-  padding: 0.4rem;
-  font-weight: 500;
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  letter-spacing: 0.4rem;
+  padding: 0.4em;
+  font-weight: 600;
+  line-height: 2;
+  letter-spacing: 0.2em;
   text-decoration: none;
   color: var(--textColour);
 }
@@ -272,23 +274,27 @@ h1 {
 .website-name :link,
 .website-name :visited {
   transition: all 1s;
-
-  line-height: 0.8;
 }
 .website-name :hover,
 .website-name :active {
   color: var(--selectColour);
+  transform: scale(1.02) translateX(0.3em);
 }
 
 .website-description {
   grid-column: 1/-1;
   line-height: 1.2;
-  padding: 2rem;
+  padding: 0.4em;
   letter-spacing: 0.1rem;
-  font-size: 2.4rem;
+
   align-self: center;
   justify-self: center;
 }
+
+.btn--delete {
+  padding: 0.2em;
+}
+
 .icon--trash {
   width: 2rem;
   transition: all 1s;
@@ -297,4 +303,65 @@ h1 {
 .icon--trash :hover,
 .icon--trash :active {
   fill: var(--selectColour);
+}
+/* Media Queries */
+
+@media screen and (max-width: 960px) {
+  .website-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .website {
+    max-width: 240px;
+    font-size: 1.6rem;
+  }
+}
+@media screen and (max-width: 660px) {
+  .website-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .website {
+    max-width: 220px;
+  }
+}
+@media screen and (max-width: 470px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  .website {
+    font-size: 1.45rem;
+  }
+  .website-name a {
+    line-height: 1.4;
+  }
+}
+@media screen and (max-width: 426px) {
+  header {
+    padding: 1.4rem 1.6rem;
+  }
+  .icon--add {
+    width: 2.67rem;
+  }
+  .website-container {
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 3em;
+  }
+  .website {
+    font-size: 1.8rem;
+    height: 25vh;
+    max-width: 305px;
+  }
+  .website-description {
+    padding: 0.4em 0.8em;
+  }
+}
+@media screen and (max-width: 350px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (max-width: 22px) {
+  .website {
+    height: 40vh;
+    font-size: 1.3rem;
+  }
 }
